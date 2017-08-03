@@ -9,7 +9,6 @@
 //
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites;
-$spriteSrc:$spriteSrc;
 $mushrooms-name: 'mushrooms';
 $mushrooms-x: 0px;
 $mushrooms-y: 0px;
@@ -19,8 +18,8 @@ $mushrooms-width: 512px;
 $mushrooms-height: 512px;
 $mushrooms-total-width: 1024px;
 $mushrooms-total-height: 1024px;
-$mushrooms-image: $spriteSrc;
-$mushrooms: (0px, 0px, 0px, 0px, 512px, 512px, 1024px, 1024px, $spriteSrc, 'mushrooms', );
+$mushrooms-image: 'sprite.png';
+$mushrooms: (0px, 0px, 0px, 0px, 512px, 512px, 1024px, 1024px, 'sprite.png', 'mushrooms', );
 $pieceofcake-name: 'pieceofcake';
 $pieceofcake-x: 512px;
 $pieceofcake-y: 0px;
@@ -30,8 +29,8 @@ $pieceofcake-width: 512px;
 $pieceofcake-height: 512px;
 $pieceofcake-total-width: 1024px;
 $pieceofcake-total-height: 1024px;
-$pieceofcake-image: $spriteSrc;
-$pieceofcake: (512px, 0px, -512px, 0px, 512px, 512px, 1024px, 1024px, $spriteSrc, 'pieceofcake', );
+$pieceofcake-image: 'sprite.png';
+$pieceofcake: (512px, 0px, -512px, 0px, 512px, 512px, 1024px, 1024px, 'sprite.png', 'pieceofcake', );
 $skewer-name: 'skewer';
 $skewer-x: 0px;
 $skewer-y: 512px;
@@ -41,8 +40,8 @@ $skewer-width: 512px;
 $skewer-height: 512px;
 $skewer-total-width: 1024px;
 $skewer-total-height: 1024px;
-$skewer-image: $spriteSrc;
-$skewer: (0px, 512px, 0px, -512px, 512px, 512px, 1024px, 1024px, $spriteSrc, 'skewer', );
+$skewer-image: 'sprite.png';
+$skewer: (0px, 512px, 0px, -512px, 512px, 512px, 1024px, 1024px, 'sprite.png', 'skewer', );
 $tray-name: 'tray';
 $tray-x: 512px;
 $tray-y: 512px;
@@ -52,13 +51,13 @@ $tray-width: 512px;
 $tray-height: 512px;
 $tray-total-width: 1024px;
 $tray-total-height: 1024px;
-$tray-image: $spriteSrc;
-$tray: (512px, 512px, -512px, -512px, 512px, 512px, 1024px, 1024px, $spriteSrc, 'tray', );
+$tray-image: 'sprite.png';
+$tray: (512px, 512px, -512px, -512px, 512px, 512px, 1024px, 1024px, 'sprite.png', 'tray', );
 $spritesheet-width: 1024px;
 $spritesheet-height: 1024px;
-$spritesheet-image: $spriteSrc;
+$spritesheet-image: 'sprite.png';
 $spritesheet-sprites: ($mushrooms, $pieceofcake, $skewer, $tray, );
-$spritesheet: (1024px, 1024px, $spriteSrc, $spritesheet-sprites, );
+$spritesheet: (1024px, 1024px, 'sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //

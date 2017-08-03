@@ -6,8 +6,8 @@ gulp.task('sprite', function() {
 		imgName: 'sprite.png',
 		cssName: 'sprite.scss',
 		cssFormat: 'scss',
-		cssTemplate:'scss.template.mustache',
-		cssOpts: 'spriteSrc'
+		// cssTemplate:'scss.template.mustache',
+		// cssOpts: 'spriteSrc'
 	}));
 	return spriteData.pipe(gulp.dest('src/static'));
 });

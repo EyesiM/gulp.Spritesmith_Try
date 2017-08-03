@@ -3,6 +3,7 @@ try use gulp.spritesmith to make sprite
 
 # how to run 
 npm install
+
 gulp sprite
 
 # what will happen

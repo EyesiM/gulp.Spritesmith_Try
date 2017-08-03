@@ -44,19 +44,21 @@ var config = {
 	},
 
 }
+
+//生产雪碧图
 gulp.task('sprite:images', function() {
-	var spriteData = gulp.src('src/images/*.png')
+	var spriteData = gulp.src( config.spriteSource + '*.+(png|jpg|jpeg|gif|svg)')
 	.pipe(spritesmith(config.spriteConfig));
-	return spriteData.pipe(gulp.dest('src/static'));
+	return spriteData.pipe(gulp.dest(config.spriteSavePath));
 });
+
 //压缩
 gulp.task('sprite:minify', function() {
-  return gulp.src('src/static' + '/**/*.+(png|jpg|jpeg|gif|svg)')
-  // Caching images that ran through imagemin
+  return gulp.src(config.spriteSavePath + '/**/*.+(png|jpg|jpeg|gif|svg)')
   .pipe(imagemin({
       interlaced: true,
     }))
-  .pipe(gulp.dest('src/static'))
+  .pipe(gulp.dest(config.spriteSavePath))
 });
 
 gulp.task('sprite',function() {

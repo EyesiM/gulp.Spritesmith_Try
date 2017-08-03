@@ -3,8 +3,6 @@ try use gulp.spritesmith to make sprite
 
 # how to run 
 npm install
-
-npm install mustache --save
 gulp sprite
 
 # what will happen

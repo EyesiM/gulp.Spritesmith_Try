@@ -63,5 +63,5 @@ gulp.task('sprite',function() {
 	runSequence(
 		'sprite:images',
 		'sprite:minify'
-	)
+	)//使用同步插件使任务按顺序执行
 });

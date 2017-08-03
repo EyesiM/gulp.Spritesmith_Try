@@ -1,0 +1,124 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$spriteSrc:$spriteSrc;
+$mushrooms-name: 'mushrooms';
+$mushrooms-x: 0px;
+$mushrooms-y: 0px;
+$mushrooms-offset-x: 0px;
+$mushrooms-offset-y: 0px;
+$mushrooms-width: 512px;
+$mushrooms-height: 512px;
+$mushrooms-total-width: 1024px;
+$mushrooms-total-height: 1024px;
+$mushrooms-image: $spriteSrc;
+$mushrooms: (0px, 0px, 0px, 0px, 512px, 512px, 1024px, 1024px, $spriteSrc, 'mushrooms', );
+$pieceofcake-name: 'pieceofcake';
+$pieceofcake-x: 512px;
+$pieceofcake-y: 0px;
+$pieceofcake-offset-x: -512px;
+$pieceofcake-offset-y: 0px;
+$pieceofcake-width: 512px;
+$pieceofcake-height: 512px;
+$pieceofcake-total-width: 1024px;
+$pieceofcake-total-height: 1024px;
+$pieceofcake-image: $spriteSrc;
+$pieceofcake: (512px, 0px, -512px, 0px, 512px, 512px, 1024px, 1024px, $spriteSrc, 'pieceofcake', );
+$skewer-name: 'skewer';
+$skewer-x: 0px;
+$skewer-y: 512px;
+$skewer-offset-x: 0px;
+$skewer-offset-y: -512px;
+$skewer-width: 512px;
+$skewer-height: 512px;
+$skewer-total-width: 1024px;
+$skewer-total-height: 1024px;
+$skewer-image: $spriteSrc;
+$skewer: (0px, 512px, 0px, -512px, 512px, 512px, 1024px, 1024px, $spriteSrc, 'skewer', );
+$tray-name: 'tray';
+$tray-x: 512px;
+$tray-y: 512px;
+$tray-offset-x: -512px;
+$tray-offset-y: -512px;
+$tray-width: 512px;
+$tray-height: 512px;
+$tray-total-width: 1024px;
+$tray-total-height: 1024px;
+$tray-image: $spriteSrc;
+$tray: (512px, 512px, -512px, -512px, 512px, 512px, 1024px, 1024px, $spriteSrc, 'tray', );
+$spritesheet-width: 1024px;
+$spritesheet-height: 1024px;
+$spritesheet-image: $spriteSrc;
+$spritesheet-sprites: ($mushrooms, $pieceofcake, $skewer, $tray, );
+$spritesheet: (1024px, 1024px, $spriteSrc, $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

@@ -4,7 +4,8 @@
   "description": "gulp sprite",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "mustache dataView.json myTemplate.mustache > public/output.html"
   },
   "author": "eyesim",
   "license": "ISC",
@@ -12,6 +13,10 @@
     "gulp": "^3.9.1",
     "gulp-imagemin": "^3.3.0",
     "gulp-sass": "^3.1.0",
-    "gulp.spritesmith": "^6.5.1"
+    "gulp.spritesmith": "^6.5.1",
+    "run-sequence": "^2.1.0"
+  },
+  "dependencies": {
+    "mustache": "^2.3.0"
   }
 }
